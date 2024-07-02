@@ -75,7 +75,7 @@ public class annotation {
 		driver.findElement(By.xpath(Retirement.Button)).click();
 
 			}
-   
+   <!-- these "I select" steps can be merged into one and pass through the value entered instead -->
    @Then("I select Employed")
  	public void employed() throws InterruptedException {
 	   driver.findElement(By.xpath(Employed.Feild)).click();
@@ -90,6 +90,7 @@ public class annotation {
 		driver.findElement(By.xpath(Employed.Self_Employeed)).click();
 			}
 
+<!--To Pass through from same user details used above -->
    @Then("I Enter Salary for User1")
 	public void salary_User1() throws InterruptedException {
 	   driver.findElement(By.id(Income.Feild)).sendKeys(User1.salary + Keys.ENTER);
@@ -113,7 +114,7 @@ public class annotation {
 	   driver.findElement(By.id(Balance.Feild)).sendKeys(User3.starting + Keys.ENTER);
 		Thread.sleep(1000);
 		}
-   
+<!-- Pass through contribution time to an When or an IF statemnt -->
    @Then("I select Fortnightly contribution")
 	public void fornightly() throws InterruptedException {
 	   driver.findElement(By.xpath(Contribution.Frequency_feild_b)).click();
@@ -125,7 +126,7 @@ public class annotation {
 	   driver.findElement(By.xpath(Contribution.Frequency_feild_b)).click();
 		driver.findElement(By.xpath(Contribution.Frequency_Anually_b)).click();
  		}
-
+<!-- if user was xxxx enter value -->
    @Then("I enter Contribution Value for User2")
 	public void contibutionValue_User2() throws InterruptedException {
 	   driver.findElement(By.id(Contribution.Text_Feild)).sendKeys(User2.contributionDollar + Keys.ENTER);
@@ -141,7 +142,7 @@ public class annotation {
 	   driver.findElement(By.xpath(Contribution.Feild)).click();
 		driver.findElement(By.xpath(Contribution.Percent_4)).click();
    		}
-   
+ <!-- to update to allow specified fund type to be passed through -->
    @Then("I select Defensive\\/Cash Fund")
  	public void defensive_Fund() throws InterruptedException {
 		driver.findElement(By.xpath(Fund.Feild)).click();
